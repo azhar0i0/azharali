@@ -9,28 +9,68 @@ const item = { hidden: { opacity: 0, y: 12 }, visible: { opacity: 1, y: 0 } };
 
 export default function Contact() {
   const [form, setForm] = useState({ name: "", email: "", message: "" });
-  const [status, setStatus] = useState(null);
+  const [toast, setToast] = useState(null);
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
   const handleChange = (e) =>
     setForm((prev) => ({ ...prev, [e.target.name]: e.target.value }));
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log("Contact form submitted:", form);
-    setStatus("Message sent! Thank you.");
-    setForm({ name: "", email: "", message: "" });
-    setTimeout(() => setStatus(null), 4000);
+    setIsSubmitting(true);
+
+    try {
+      const response = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          access_key: "bd4a3a0a-b47b-4984-be76-81f284a36b84",
+          name: form.name,
+          email: form.email,
+          message: form.message,
+        }),
+      });
+
+      const result = await response.json();
+
+      if (result.success) {
+        setToast({ message: "✔ Message sent successfully!", type: "success" });
+        setForm({ name: "", email: "", message: "" });
+      } else {
+        setToast({ message: "✘ Failed to send message. Please try again.", type: "error" });
+      }
+    } catch (error) {
+      console.error(error);
+      setToast({ message: "! An error occurred. Please try again.", type: "error" });
+    } finally {
+      setIsSubmitting(false);
+      setTimeout(() => setToast(null), 4000);
+    }
   };
 
   return (
     <section className="contact" id="contact">
+      {/* Toast Notification */}
+      {toast && (
+        <motion.div
+          className={`custom-toast ${toast.type}`}
+          initial={{ opacity: 0, y: -30 }}
+          animate={{ opacity: 1, y: 0 }}
+          exit={{ opacity: 0, y: -30 }}
+        >
+          {toast.message}
+        </motion.div>
+      )}
+
       <motion.div
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true }}
         variants={container}
       >
-        <motion.p className="text-primary fw-bold mb-1" variants={item}>CONTACT</motion.p>
+        <motion.p className="text-primary fw-bold mb-1" variants={item}>
+          CONTACT
+        </motion.p>
         <motion.h1 variants={item}>Get in Touch with Us</motion.h1>
         <motion.hr variants={item} />
 
@@ -60,7 +100,7 @@ export default function Contact() {
             <motion.div className="social-links" variants={item}>
               <a
                 className="social-link"
-                href="https://github.com/Saboo24"
+                href="https://github.com/azhar0i0"
                 target="_blank"
                 rel="noreferrer"
               >
@@ -76,7 +116,7 @@ export default function Contact() {
               </a>
               <a
                 className="social-link"
-                href="https://wa.me/213554139526"
+                href="https://wa.me/923298892016"
                 target="_blank"
                 rel="noreferrer"
               >
@@ -117,10 +157,9 @@ export default function Contact() {
                   placeholder="Your Message"
                 ></textarea>
               </div>
-              <button type="submit" className="btn-send">
-                Send Message
+              <button type="submit" className="btn-send" disabled={isSubmitting}>
+                {isSubmitting ? "Sending..." : "Send Message"}
               </button>
-              {status && <span className="status">{status}</span>}
             </form>
           </motion.div>
         </motion.div>

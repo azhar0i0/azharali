@@ -24,13 +24,13 @@ export default function Footer() {
           </ul>
 
           <div className="footer-social">
-            <a href="https://github.com/Saboo24" target="_blank" rel="noreferrer">
+            <a href="https://github.com/azhar0i0" target="_blank" rel="noreferrer">
               <i className="fa-brands fa-github"></i>
             </a>
             <a href="https://www.linkedin.com/in/skibidi-azhar/" target="_blank" rel="noreferrer">
               <i className="fa-brands fa-linkedin"></i>
             </a>
-            <a href="https://wa.me/213554139526" target="_blank" rel="noreferrer">
+            <a href="https://wa.me/923298892016" target="_blank" rel="noreferrer">
               <i className="fa-brands fa-whatsapp"></i>
             </a>
           </div>

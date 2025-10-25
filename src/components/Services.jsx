@@ -1,4 +1,3 @@
-// src/components/Services.jsx
 import React from "react";
 import webSvg from "../assets/images/web.svg";
 import appSvg from "../assets/images/app.svg";
@@ -9,22 +8,22 @@ export default function Services() {
   const services = [
     {
       title: "Web Development",
-      desc: "We're use React + Vite for our web dev with Tailwind, Redux and modular folder structure.",
+      desc: "We use React + Vite for our web development with Tailwind, Redux, and a modular folder structure.",
       img: webSvg,
     },
     {
       title: "App Development",
-      desc: "We're use React Native for app dev with Tailwind and modular folder structure.",
+      desc: "We use React Native for app development with Tailwind and clean modular architecture.",
       img: appSvg,
     },
     {
       title: "Social Media Marketing",
-      desc: "We're expert in social media marketing, doing our professional work from 2019.",
+      desc: "We are experts in social media marketing, providing professional service since 2019.",
       img: dmSvg,
     },
     {
       title: "Custom Backend",
-      desc: "We're use Node.js & Django for custom backend, completely structured and organized.",
+      desc: "We use Node.js & Django for structured, secure, and scalable backend solutions.",
       img: seoSvg,
     },
   ];

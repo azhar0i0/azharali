@@ -1,20 +1,42 @@
-<<<<<<< HEAD
-# React + Vite
+# 🌟 Animated Service Cards – React + Framer Motion
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A **beautifully animated service cards section** built using **React**, **Framer Motion**, and **modern CSS**.  
+Designed for **professional websites**, this component offers smooth hover animations, color transitions, and a fully responsive layout that looks stunning across all devices.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🖼️ Screenshots
 
-## React Compiler
+### 💻 Desktop View
+![Desktop Screenshot](./screenshots/desktop-view.png)
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+### 📱 Mobile View
+![Mobile Screenshot](./screenshots/mobile-view.png)
 
-## Expanding the ESLint configuration
+---
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
-=======
-# azharali
->>>>>>> 9aa6ab40956ae1ed0b4d007e46a1a6ef057fa523
+## 🧩 Tech Stack
+
+![React](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)
+![Framer Motion](https://img.shields.io/badge/Framer_Motion-000000?style=for-the-badge&logo=framer&logoColor=white)
+![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white)
+![Vite](https://img.shields.io/badge/Vite-B73BFE?style=for-the-badge&logo=vite&logoColor=FFD62E)
+
+---
+
+## ✨ Features
+
+✅ **Responsive layout** – adapts perfectly to all screen sizes  
+✅ **Smooth hover animations** with Framer Motion  
+✅ **Color transition effects** on hover  
+✅ **Non-disturbing image scaling**  
+✅ **Clean, professional code structure**
+
+---
+
+## 🛠️ Setup & Usage
+
+1. **Clone the repository**
+   ```bash
+   git clone https://github.com/yourusername/animated-service-cards.git
+   cd animated-service-cards

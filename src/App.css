@@ -104,33 +104,35 @@ header {
   color: green;
 }
 
+/* Keep row on medium+ screens, only column on mobile */
 .home-container {
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 5rem;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;           /* <-- IMPORTANT: do not wrap on medium+ */
 }
 
 .img-wrap {
-  flex: 1;
+  flex: 0 0 420px;            /* fixed allowed width but flexible */
   display: flex;
   justify-content: center;
 }
 
 .img-wrap img {
   width: 100%;
-  max-width: 400px;
+  max-width: 420px;
   height: auto;
   border-radius: 15px;
   object-fit: cover;
 }
 
 .info-home {
-  flex: 1;
+  flex: 1 1 480px;            /* grow/shrink but prefer 480px */
   min-width: 280px;
 }
 
+/* Typography */
 .info-home h1 {
   font-size: clamp(2rem, 4vw, 4.5rem);
   font-family: "Raleway", sans-serif;
@@ -245,7 +247,9 @@ hr {
   }
 }
 
-/* 💻 Laptop / Desktop */
+/* 💻 Laptop / Desktop / Medium screens
+   KEEP ROW (single-line) for everything above mobile
+*/
 @media (max-width: 1400px) {
   .home {
     margin: 140px auto;
@@ -253,59 +257,57 @@ hr {
   }
   .home-container {
     gap: 3rem;
-  }
-}
-
-/* 📱 Tablet Landscape */
-@media (max-width: 1024px) {
-  .home-container {
-    flex-direction: column-reverse;
+    flex-wrap: nowrap; /* still single-line */
     align-items: center;
-    text-align: center;
-  }
-
-  .info-home h1 {
-    font-size: 2.8rem;
-  }
-  .info-home h3 {
-    font-size: 1.6rem;
-  }
-  .btnn {
-    justify-content: center;
-  }
-  .follow {
-    justify-content: center;
-  }
-  .img-wrap img {
-    max-width: 350px;
   }
 }
 
-/* 📱 Tablet Portrait */
+/* ——— MOBILE: stack to column only on small screens (<= 768px) ——— */
 @media (max-width: 768px) {
   .home {
-    margin: 120px auto;
+    margin: 80px auto;
     padding: 0 6%;
+  }
+
+  .home-container {
+    flex-direction: column-reverse; /* image below text on mobile */
+    align-items: center;
+    text-align: center;
+    gap: 2.5rem;
+    flex-wrap: nowrap;
+  }
+
+  .img-wrap {
+    flex: 0 0 auto;
+    width: 100%;
+    max-width: 360px;
+  }
+
+  .img-wrap img {
+    max-width: 320px;
+  }
+
+  .info-home {
+    width: 100%;
   }
 
   .info-home h1 {
     font-size: 2.2rem;
   }
+
   .info-home h3 {
     font-size: 1.3rem;
   }
+
   .info-p {
     font-size: 0.95rem;
   }
-  .img-wrap img {
-    max-width: 320px;
-  }
 }
 
-/* 📲 Mobile */
+/* 📲 Very small phones */
 @media (max-width: 480px) {
   .home {
-    margin: 10px;
+    margin: 20px 12px;
     padding: 0 5%;
   }
 
@@ -314,9 +316,6 @@ hr {
   }
   .info-home h3 {
     font-size: 1.1rem;
-  }
-  .info-p {
-    font-size: 0.9rem;
   }
   .btnn {
     flex-direction: column;
@@ -328,7 +327,7 @@ hr {
     max-width: 260px;
   }
   .img-wrap img {
-    max-width: 250px;
+    max-width: 240px;
   }
 }
 

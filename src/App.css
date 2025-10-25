@@ -305,7 +305,7 @@ hr {
 /* 📲 Mobile */
 @media (max-width: 480px) {
   .home {
-    margin: 100px auto;
+    margin: 10px;
     padding: 0 5%;
   }
 

@@ -43,6 +43,6 @@ You can preview this portfolio website here: <a href="https://azharali.vercel.ap
 
 1. **Clone the repository**
    ```bash
-   git clone https://github.com/yourusername/animated-service-cards.git
+   git clone https://github.com/azhar0i0/azharali.git
    
-   cd animated-service-cards
+   cd azharali

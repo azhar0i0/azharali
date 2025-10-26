@@ -6,7 +6,8 @@ Designed for **professional websites**, this component offers smooth hover anima
 ---
 
 ## 👾 Live Preview
-You can preview this portfolio website here: ![LivePreview](https://azharali.vercel.app)
+You can preview this portfolio website here: <a href="https://azharali.vercel.app" target="_blank">LivePreview</a>
+
 ---
 
 ## 🖼️ Screenshots

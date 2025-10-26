@@ -28,12 +28,17 @@ export default function Home() {
               </p>
             </div>
             <div className="btnn">
-              <button className="btn-home1">
+              <a href="#contact" className="btn-home1">
                 <i className="fa-solid fa-arrow-right"></i> Hire Me
-              </button>
-              <button className="btn-home2">
+              </a>
+
+              <a
+                href="/CV.pdf"
+                download="Azhar_Ali_CV.pdf"
+                className="btn-home2"
+              >
                 <i className="fa-solid fa-download"></i> Download CV
-              </button>
+              </a>
             </div>
             <hr />
             <div className="follow">
@@ -63,6 +68,7 @@ export default function Home() {
             </div>
           </div>
         </div>
+
         <div className="img-wrap">
           <img src={pfp} alt="Profile" />
         </div>

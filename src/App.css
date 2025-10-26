@@ -67,9 +67,19 @@ header {
   color: black;
 }
 
+.ul-list li:hover {
+  background-color: #8E9048;
+  padding: 10px 15px;
+}
+
 .ul-list li.active {
   background-color: black;
   padding: 10px 15px;
+}
+
+.ul-list li:hover a,
+.ul-list li:hover i {
+  color: white;
 }
 
 .ul-list li.active a,
@@ -172,27 +182,121 @@ header {
 .btn-home1,
 .btn-home2 {
   border-radius: 10px;
-  padding: 10px 20px;
+  padding: 12px 26px;
   cursor: pointer;
   font-size: 1rem;
-  transition: 0.4s;
+  transition: all 0.4s ease;
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  overflow: hidden;
+  text-decoration: none;
 }
 
 .btn-home1 {
-  background-color: #000;
+  background: linear-gradient(135deg, #000, #222);
   color: #fff;
   border: none;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+}
+
+.btn-home1::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 10px;
+  padding: 2px;
+  background: #8E9048;
+  background-size: 300%;
+  z-index: -1;
+  transition: 0.5s;
+  animation: gradientMove 3s linear infinite;
+  opacity: 0;
+}
+
+.btn-home1:hover::before {
+  opacity: 1;
+}
+
+.btn-home1 i {
+  transition: transform 0.3s ease;
+}
+
+.btn-home1:hover i {
+  transform: translateX(6px);
+}
+
+.btn-home1:hover {
+  transform: translateY(-3px) scale(1.05);
+  background: linear-gradient(135deg, #000, #111);
 }
 
 .btn-home2 {
   background-color: transparent;
-  border: 2px solid black;
+  color: #000;
+  border: 2px solid #000;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.4s ease;
+}
+
+.btn-home2::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 10px;
+  padding: 2px;
+  background: #c2c47d;
+  background-size: 300%;
+  z-index: -1;
+  transition: 0.5s;
+  animation: gradientMove 3s linear infinite;
+  opacity: 0;
+}
+
+.btn-home2::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: #8E9048;
+  border-radius: 8px;
+  transform: translateY(100%);
+  transition: 0.4s ease;
+  z-index: -1;
+}
+
+.btn-home2:hover::before {
+  opacity: 1;
+}
+
+.btn-home2:hover::after {
+  transform: translateY(0);
 }
 
 .btn-home2:hover {
-  background-color: #000;
   color: #fff;
+  transform: translateY(-3px) scale(1.05);
+  border-color: #8E9048;
 }
+
+.btn-home2 i {
+  transition: transform 0.3s ease;
+}
+
+.btn-home2:hover i {
+  transform: translateY(-3px);
+}
+
+@keyframes gradientMove {
+  0% {
+    background-position: 0% 50%;
+  }
+  100% {
+    background-position: 100% 50%;
+  }
+}
+
 
 hr {
   width: 90%;

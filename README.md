@@ -5,6 +5,10 @@ Designed for **professional websites**, this component offers smooth hover anima
 
 ---
 
+## 👾 Live Preview
+You can preview this portfolio website here: ![LivePreview](https://azharali.vercel.app)
+---
+
 ## 🖼️ Screenshots
 
 ### 💻 Desktop View
@@ -39,4 +43,5 @@ Designed for **professional websites**, this component offers smooth hover anima
 1. **Clone the repository**
    ```bash
    git clone https://github.com/yourusername/animated-service-cards.git
+   
    cd animated-service-cards

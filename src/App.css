@@ -3,6 +3,10 @@
   padding: 0;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   margin:0;
   padding:0;
@@ -612,10 +616,19 @@ hr {
   filter: brightness(40%) blur(1px);
 }
 
+.project-card-body {
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  padding: 10px 12px;
+  text-align: left;
+  color: #333;
+}
+
 .project-info {
   position: absolute;
   inset: 0;
-  background: rgba(0, 0, 0, 0.45);
+  background: rgba(0,0,0,0.45);
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -630,6 +643,7 @@ hr {
 .project-card:hover .project-info {
   opacity: 1;
 }
+
 
 .project-info h3 {
   font-size: 1.25rem;
@@ -1129,5 +1143,208 @@ hr {
   to {
     opacity: 1;
     transform: translateY(0);
+  }
+}
+
+/* ============================================
+      PREMIUM PROJECT CARDS (Awwwards Level)
+============================================ */
+
+.pro-card {
+  background: #ffffff;
+  border-radius: 12px;
+  overflow: hidden;
+  height: 100%;
+  cursor: pointer;
+  transition: 0.45s ease;
+  border: 1px solid rgba(142,144,72,0.2);
+  box-shadow: 0 3px 8px rgba(0,0,0,0.07);
+  position: relative;
+  transform-style: preserve-3d;
+}
+
+.pro-card:hover {
+  transform: translateY(-12px) scale(1.03);
+  box-shadow: 0 6px 16px rgba(0,0,0,0.18);
+  border-color: #8E9048;
+}
+
+/* Image */
+.pro-card-img-wrap {
+  height: 220px;
+  position: relative;
+  overflow: hidden;
+}
+
+.pro-card-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: 0.6s ease;
+}
+
+.pro-card:hover .pro-card-img {
+  transform: scale(1.15);
+  filter: brightness(1.12);
+}
+
+/* shine (light reflection) */
+.pro-card-shine {
+  position: absolute;
+  top: 0;
+  left: -120%;
+  width: 70%;
+  height: 100%;
+  background: linear-gradient(100deg, transparent 40%, rgba(255,255,255,0.65) 50%, transparent 60%);
+  transform: skewX(-20deg);
+  transition: 0.7s;
+}
+
+.pro-card:hover .pro-card-shine {
+  left: 150%;
+}
+
+/* Body */
+.pro-card-body {
+  padding: 18px 20px;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.pro-card-title {
+  font-size: 1.2rem;
+  font-weight: 700;
+  margin-bottom: 8px;
+  color: #1a1a1a;
+}
+
+.pro-card-desc {
+  color: #555;
+  font-size: 0.95rem;
+  flex-grow: 1;
+  margin-bottom: 18px;
+}
+
+/* Button */
+.pro-btn {
+  background: #8E9048;
+  color: white;
+  padding: 10px 14px;
+  border-radius: 10px;
+  border: none;
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  transition: 0.28s ease;
+}
+
+.pro-btn:hover {
+  background: #75773d;
+  transform: translateY(-3px);
+}
+
+/* ============================================
+      PREMIUM SHIMMER SKELETONS (Vercel-like)
+============================================ */
+
+.pro-skeleton-card {
+  background: #fff;
+  padding: 16px;
+  border-radius: 15px;
+  border: 1px solid rgba(0,0,0,0.08);
+  box-shadow: none;
+  height: 320px;
+}
+
+.pro-skeleton-img {
+  height: 180px;
+  border-radius: 14px;
+  margin-bottom: 14px;
+  background: #e5e5e5;
+}
+
+.pro-skeleton-line {
+  height: 14px;
+  border-radius: 8px;
+  background: #e5e5e5;
+  margin-bottom: 10px;
+}
+
+.pro-skeleton-line.short {
+  width: 55%;
+}
+
+/* shimmer effect */
+.shimmer {
+  position: relative;
+  overflow: hidden;
+}
+
+.shimmer::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -150%;
+  width: 70%;
+  height: 100%;
+  background: linear-gradient(110deg, transparent 40%, rgba(255,255,255,0.55) 60%, transparent 80%);
+  animation: shimmerMove 1.2s infinite;
+}
+
+@keyframes shimmerMove {
+  0% { left: -150%; }
+  100% { left: 150%; }
+}
+/* Parent relative ensures icon is inside input */
+.position-relative {
+  position: relative;
+}
+
+/* Parent relative ensures icon is inside input */
+.position-relative {
+  position: relative;
+  width: 100%;
+  max-width: 600px;  /* controls maximum width */
+}
+
+/* Input styling */
+.search-input {
+  width: 100%;
+  padding-left: 2.5rem; /* space for icon */
+  border-radius: 50px;
+  height: 45px;
+  border: 1px solid #ccc;
+  transition: all 0.3s ease;
+}
+
+/* Search icon inside input */
+.search-icon {
+  position: absolute;
+  left: 15px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #8E9048;
+  font-size: 1.2rem;
+  pointer-events: none;
+}
+
+/* Hover & focus effect */
+.search-input:focus {
+  outline: none;
+  border: 1px solid #8E9048;
+}
+
+/* Responsive adjustments */
+@media (max-width: 992px) {
+  .position-relative {
+    max-width: 450px;
+  }
+}
+
+@media (max-width: 576px) {
+  .position-relative {
+    max-width: 90%;
   }
 }

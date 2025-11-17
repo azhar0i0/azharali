@@ -2,8 +2,9 @@
 import React from "react";
 import { motion } from "framer-motion";
 import zarvean from "../assets/images/zarvean.png";
-import portfolio from "../assets/images/Capture d'écran 2025-10-22 182207.png";
+import portfolio from "../assets/images/portfolio.png";
 import inspire from "../assets/images/InspireMeNow.png";
+import { Link } from "react-router-dom";
 
 const grid = {
   hidden: { opacity: 0 },
@@ -80,6 +81,13 @@ export default function Projects() {
             </motion.div>
           ))}
         </motion.div>
+
+        {/* View All Projects Button */}
+        <div className="mt-5">
+          <Link to="/GitProjects" className="btn btn-dark px-4 py-2 rounded-pill fw-semibold">
+            View All Projects
+          </Link>
+        </div>
       </div>
     </section>
   );

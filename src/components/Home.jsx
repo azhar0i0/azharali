@@ -50,7 +50,7 @@ export default function Home() {
                   </a>
                 </li>
                 <li>
-                  <a href="#">
+                  <a href="https://discord.com/channels/@skibidi.azhar">
                     <i className="fa-brands fa-discord"></i>
                   </a>
                 </li>
